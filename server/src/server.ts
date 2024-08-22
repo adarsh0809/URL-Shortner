@@ -13,10 +13,10 @@ const connectionString = process.env.CONNECTION_STRING || '';
 
 app.use (express.json());  // to deal with the JSON data it parese into JS object
 app.use (express.urlencoded({extended : true}))  // to deal with the form data , it parse it into JS object
-app.use (cors ({
-    origin : "http://localhost:3000",
-    credentials: true,
-}))
+app.use(cors({
+    origin: '*',
+    credentials: true, // Optional: Include if you need to support cookies or authentication
+}));
 
 app.use('/api' , shortUrl);
 
